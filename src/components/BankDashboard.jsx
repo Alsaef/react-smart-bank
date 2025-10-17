@@ -39,7 +39,7 @@ const BankDashboard = ({user,setUser}) => {
 
             
             {toggle === "cashout" && (
-               <CashOut></CashOut>
+               <CashOut ammount={ammount} setAmmount={setAmmount} ></CashOut>
             )}
         </div>
     );

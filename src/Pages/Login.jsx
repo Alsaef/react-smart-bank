@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaUserCircle } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Login = ({setUser}) => {
 
@@ -70,7 +71,7 @@ const Login = ({setUser}) => {
         </form>
 
         <div>
-        
+        <Link to={'/register'}>Don't Have Any Account?{' '} <span className="text-primary font-semibold">Create Account</span></Link>
         </div>
       </div>
     </div>

@@ -1,13 +1,12 @@
 import { useState } from 'react'
 import './App.css'
-import Login from './components/Login'
+import Login from './Pages/Login'
 import BankDashboard from './components/BankDashboard'
 
 function App() {
-  const [user, setUser] = useState(false)
+  const [user, setUser] = useState(true)
   return (
    <div>
-  {!user&&  <Login setUser={setUser}></Login>}
   {user&&<BankDashboard user={user} setUser={setUser}></BankDashboard>}
    </div>
   )

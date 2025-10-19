@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { FaMoneyBillWave } from "react-icons/fa";
 import ToggleComponent from "./ToggleComponent";
-import CashIn from "./CashIn";
+import SendMoney from "./SendMoney";
 import CashOut from "./CashOut";
 
 const BankDashboard = ({user,setUser}) => {
-    const [toggle, setToggle] = useState("cashin");
+    const [toggle, setToggle] = useState("sendmoney");
 
     const [ammount,setAmmount]=useState(12000)
 
@@ -33,8 +33,8 @@ const BankDashboard = ({user,setUser}) => {
 
             <ToggleComponent toggle={toggle} setToggle={setToggle}></ToggleComponent>
            
-            {toggle === "cashin" && (
-              <CashIn setAmmount={setAmmount}></CashIn>
+            {toggle === "sendmoney" && (
+              <SendMoney setAmmount={setAmmount}></SendMoney>
             )}
 
             

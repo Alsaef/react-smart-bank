@@ -7,10 +7,10 @@ const ToggleComponent = ({setToggle,toggle}) => {
              <div className="flex justify-center mt-10">
         <div className="join">
           <button
-            onClick={() => setToggle("cashin")}
-            className={`join-item btn ${toggle === "cashin" ? "btn-primary text-white" : "btn-outline"}`}
+            onClick={() => setToggle("sendmoney")}
+            className={`join-item btn ${toggle === "sendmoney" ? "btn-primary text-white" : "btn-outline"}`}
           >
-            <FaArrowDown className="mr-2" /> Cash In
+            <FaArrowDown className="mr-2" /> Send Money
           </button>
           <button
             onClick={() => setToggle("cashout")}

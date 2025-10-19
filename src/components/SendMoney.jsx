@@ -1,27 +1,25 @@
 import React from 'react';
 
-const CashIn = ({setAmmount }) => {
+const SendMoney = ({setAmmount }) => {
     const handelCashIn = (event) => {
         event.preventDefault();
 
         const ammouninput = Number(event.target.ammouninput.value);
 
-        const pin = event.target.pin.value;
-
-        if (pin !== '1234') {
-            alert('invalid pin')
-            return
-        }
-        setAmmount(prev => prev + ammouninput)
-
-        event.target.reset()
+     
     }
     return (
         <div>
             <div className="flex justify-center mt-10">
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <form onSubmit={handelCashIn} className="card-body">
-                        <h2 className="card-title text-primary">Cash In</h2>
+                        <h2 className="card-title text-primary">Send Money</h2>
+                         <label className="form-control">
+                            <div className="label">
+                                <span className="label-text">Enter Number</span>
+                            </div>
+                            <input type="text" name='number' placeholder="Number" className="input input-bordered" />
+                        </label>
                         <label className="form-control">
                             <div className="label">
                                 <span className="label-text">Enter Amount</span>
@@ -35,7 +33,7 @@ const CashIn = ({setAmmount }) => {
                             <input name='pin' type="password" placeholder="****" className="input input-bordered" />
                         </label>
                         <div className="card-actions justify-end mt-4">
-                            <button className="btn btn-primary w-full">Confirm Cash In</button>
+                            <button className="btn btn-primary w-full">Confirm Send Money</button>
                         </div>
                     </form>
                 </div>
@@ -44,4 +42,4 @@ const CashIn = ({setAmmount }) => {
     );
 };
 
-export default CashIn;
+export default SendMoney;

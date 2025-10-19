@@ -6,20 +6,9 @@ const CashOut = ({ammount,setAmmount}) => {
 
         const ammouninput = Number(event.target.ammouninput.value);
 
-        const pin = event.target.pin.value;
         
-        if (ammouninput>ammount) {
-            alert('Balance Is Not Available')
-            return
-        }
-
-        if (pin !== '1234') {
-            alert('invalid pin')
-            return
-        }
-        setAmmount(prev =>ammouninput-prev )
-
-        event.target.reset()
+        
+      
     }
     return (
         <div>
@@ -27,6 +16,12 @@ const CashOut = ({ammount,setAmmount}) => {
                     <form onSubmit={handelCashIn} className="card w-96 bg-base-100 shadow-xl">
                         <div className="card-body">
                             <h2 className="card-title text-primary">Cash Out</h2>
+                            <label className="form-control">
+                                <div className="label">
+                                    <span className="label-text">Enter Agent Number</span>
+                                </div>
+                                <input type="text" name='number' placeholder="number" className="input input-bordered" />
+                            </label>
                             <label className="form-control">
                                 <div className="label">
                                     <span className="label-text">Enter Amount</span>

@@ -15,7 +15,9 @@ const CashOut = ({ammount,setAmmount}) => {
            <div className="flex justify-center mt-10">
                     <form onSubmit={handelCashIn} className="card w-96 bg-base-100 shadow-xl">
                         <div className="card-body">
-                            <h2 className="card-title text-primary">Cash Out</h2>
+                             <h2 className="text-2xl font-semibold mb-6 text-center text-gray-700 border-b pb-3">
+                            CashOut
+                        </h2>
                             <label className="form-control">
                                 <div className="label">
                                     <span className="label-text">Enter Agent Number</span>
@@ -35,7 +37,7 @@ const CashOut = ({ammount,setAmmount}) => {
                                 <input name='pin' type="password" placeholder="****" className="input input-bordered" />
                             </label>
                             <div className="card-actions justify-end mt-4">
-                                <button className="btn btn-error w-full text-white">Confirm Cash Out</button>
+                                <button className="btn btn-primary w-full text-white">Confirm Cash Out</button>
                             </div>
                         </div>
                     </form>

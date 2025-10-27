@@ -13,7 +13,10 @@ const SendMoney = ({setAmmount }) => {
             <div className="flex justify-center mt-10">
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <form onSubmit={handelCashIn} className="card-body">
-                        <h2 className="card-title text-primary">Send Money</h2>
+                        
+                             <h2 className="text-2xl font-semibold mb-6 text-center text-gray-700 border-b pb-3">
+                            Send Money
+                        </h2>
                          <label className="form-control">
                             <div className="label">
                                 <span className="label-text">Enter Number</span>

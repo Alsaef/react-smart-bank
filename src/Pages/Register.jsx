@@ -55,6 +55,18 @@ const Register = () => {
             />
           </label>
 
+
+            <label className="form-control mt-4">
+            <div className="label">
+              <span className="label-text font-medium">Select Account Type</span>
+            </div>
+            <select name="role" className="select select-bordered w-full" required>
+              <option value="">Select role</option>
+              <option value="personal">Personal Account</option>
+              <option value="agent">Agent Account</option>
+            </select>
+          </label>
+
           {/* PIN */}
           <label className="form-control mt-4">
             <div className="label">
@@ -68,6 +80,8 @@ const Register = () => {
               required
             />
           </label>
+
+          
 
           {/* Submit */}
           <div className="form-control mt-6">

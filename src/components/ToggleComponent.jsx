@@ -5,18 +5,18 @@ const ToggleComponent = ({setToggle,toggle}) => {
     return (
         <div>
              <div className="flex justify-center mt-10">
-        <div className="join">
+        <div className="flex items-center gap-3">
           <button
             onClick={() => setToggle("sendmoney")}
-            className={`join-item btn ${toggle === "sendmoney" ? "btn-primary text-white" : "btn-outline"}`}
+            className={`btn btn-wide shadow-xl flex-1 ${toggle === 'sendmoney' ? 'btn-primary' : 'btn-neutral'} w-full px-8 py-4`}
           >
-            <FaArrowDown className="mr-2" /> Send Money
+            <FaArrowDown className="w-5 h-5 mr-1" /> Send Money
           </button>
           <button
             onClick={() => setToggle("cashout")}
-            className={`join-item btn ${toggle === "cashout" ? "btn-primary text-white" : "btn-outline"}`}
+            className={`btn btn-wide shadow-xl flex-1 ${toggle === 'cashout' ? 'btn-primary' : 'btn-neutral'} px-8 py-4 w-full`}
           >
-            <FaArrowUp className="mr-2" /> Cash Out
+            <FaArrowUp className="w-5 h-5 mr-1" /> Cash Out
           </button>
         </div>
       </div>

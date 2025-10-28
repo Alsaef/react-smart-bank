@@ -1,9 +1,10 @@
 import { FaUserPlus } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-
+import axiosInterface from "../Hook/useAxios";
+import Swal from 'sweetalert2'
 const Register = () => {
-  const [success, setSuccess] = useState(false);
+const navigation=useNavigate()
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -11,11 +12,41 @@ const Register = () => {
     const name = e.target.name.value;
     const accountNumber = e.target.accountNumber.value;
     const pin = e.target.pin.value;
+    const role = e.target.role.value;
 
-    if (name && accountNumber && pin) {
-      setSuccess(true);
-      e.target.reset();
+    const userData = {
+      name: name,
+      number: accountNumber,
+      pin: pin,
+      role: role
     }
+
+    axiosInterface.post('/api/register', userData)
+      .then((data) => {
+
+        if (data?.data.acknowledged === true) {
+          Swal.fire({
+            title: "Account Create!",
+            text: "This Account Create Successful!",
+            icon: "success"
+          });
+          navigation('/login')
+        } else {
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: data.data.message,
+          });
+        }
+      }).catch(error => {
+         Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: error.message,
+          });
+      })
+
+
   };
 
   return (
@@ -56,7 +87,7 @@ const Register = () => {
           </label>
 
 
-            <label className="form-control mt-4">
+          <label className="form-control mt-4">
             <div className="label">
               <span className="label-text font-medium">Select Account Type</span>
             </div>
@@ -73,7 +104,7 @@ const Register = () => {
               <span className="label-text font-medium">PIN</span>
             </div>
             <input
-              type="password"
+              type="number"
               name="pin"
               placeholder="Set a 4-digit PIN"
               className="input input-bordered w-full"
@@ -81,7 +112,7 @@ const Register = () => {
             />
           </label>
 
-          
+
 
           {/* Submit */}
           <div className="form-control mt-6">
@@ -89,12 +120,6 @@ const Register = () => {
               Register
             </button>
           </div>
-
-          {success && (
-            <p className="text-green-600 text-center mt-3 font-medium">
-              Account created successfully! 🎉
-            </p>
-          )}
         </form>
 
         <div className="text-center mb-4">
